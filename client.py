@@ -1,17 +1,17 @@
 import requests
 from datetime import date
-import os
+
 
 today = date.today()
 client_ip = requests.get("https://api.ipify.org").text
 
-class Infinite:
+class Winvr:
 
     def Create():
         for i in range(50):
             date =  today.strftime("-%d-%m-%Y-%H-%M-%S")
-            os.system(f"echo 'pc_on_{date}' | curl -T - https://ppng.io/{client_ip}{date}")
-
+            request = requests.get(f"https://ppng.io/{client_ip}{str(date)}")
+            # do something will the request
 
 if __name__ == "__main__":
-    Infinite.Create()
+    Winvr.Create()
