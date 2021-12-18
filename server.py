@@ -1,16 +1,13 @@
 import requests
-from datetime import date
-import os
+import subprocess
 
-clients_ip = "" ## client to connects ip address (public)
-today = date.today()
+clients_ip = input("CLIENTS IP: ") ## client to connects ip address (public)
 
 class Infinite:
 
     def Create():
         for i in range(50):
-            date =  today.strftime("-%d-%m-%Y-%H-%M-%S")
-            os.system(f"echo 'pc_on_{date}' | curl -T - https://ppng.io/{clients_ip}{date}")
+            subprocess.getoutput(f"echo ping | curl -T - https://ppng.io/{clients_ip}-infinite")
 
 
 if __name__ == "__main__":
