@@ -6,7 +6,7 @@ class Infinite:
 
     def Create():
         while True:
-            request = requests.get(f"https://ppng.io/{client_ip}-infinite")
+            request = requests.get(f"https://ppng.io/{client_ip}-infinite").text
             print(request)
 
 if __name__ == "__main__":
